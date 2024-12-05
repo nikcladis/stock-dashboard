@@ -32,7 +32,7 @@ const Search = () => {
       />
 
       {input && (
-        <button onClick={clearInput}>
+        <button onClick={clearInput} className="m-1">
           <XIcon className="h-4 w-4 fill-gray-500" />
         </button>
       )}
