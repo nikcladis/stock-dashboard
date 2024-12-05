@@ -1,6 +1,7 @@
 import Card from "@components/Card";
 import Header from "@components/Header";
 import Details from "@components/Details";
+import Overview from "@components/Overview";
 
 import { mockCompanyDetails } from "@constants/mock";
 
@@ -14,7 +15,13 @@ const Dashboard = () => {
         <Card>Chart</Card>
       </div>
       <div>
-        <Card>Overview</Card>
+        <Overview
+          symbol={mockCompanyDetails.ticker}
+          price={300}
+          change={30}
+          changePercent={10.0}
+          currency="USD"
+        />
       </div>
       <div className="row-span-2 xl:row-span-3">
         <Details details={mockCompanyDetails} />
