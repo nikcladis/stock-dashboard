@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import Card from "@components/Card";
+import ThemeContext from "@contexts/ThemeContext";
 
 const Details = ({ details }) => {
+  const { darkMode } = useContext(ThemeContext);
+
   const detailsList = {
     name: "Name",
     country: "Country",
@@ -17,7 +21,11 @@ const Details = ({ details }) => {
 
   return (
     <Card>
-      <ul className="w-full h-full flex flex-col justify-between divide-y-1">
+      <ul
+        className={`w-full h-full flex flex-col justify-between divide-y-1 ${
+          darkMode ? "divide-gray-800" : null
+        }`}
+      >
         {Object.keys(detailsList).map((item) => {
           return (
             <li key={item} className="flex-1 flex justify-between items-center">
