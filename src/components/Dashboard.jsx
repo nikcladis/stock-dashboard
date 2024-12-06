@@ -1,4 +1,4 @@
-import Card from "@components/Card";
+import Chart from "@components/Chart";
 import Header from "@components/Header";
 import Details from "@components/Details";
 import Overview from "@components/Overview";
@@ -12,7 +12,7 @@ const Dashboard = () => {
         <Header name={mockCompanyDetails.name} />
       </div>
       <div className="md:col-span-2 row-span-4">
-        <Card>Chart</Card>
+        <Chart />
       </div>
       <div>
         <Overview
