@@ -3,7 +3,7 @@ import Chart from "@components/Chart";
 import Header from "@components/Header";
 import Details from "@components/Details";
 import Overview from "@components/Overview";
-import ThemeContext from "@/contexts/ThemeContext";
+import ThemeContext from "@contexts/ThemeContext";
 import { mockCompanyDetails } from "@constants/mock";
 
 const Dashboard = () => {

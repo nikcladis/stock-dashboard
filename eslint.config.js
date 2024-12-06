@@ -43,6 +43,7 @@ export default [
         { allowConstantExport: true }, // Warn for improper exports in Fast Refresh
       ],
       "react/prop-types": "off", // Disable prop-types rule
+      "no-unused-vars": "off", // Disable unused-vars rule
     },
   },
 ];

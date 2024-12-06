@@ -1,7 +1,8 @@
-import { useState } from "react";
 import Card from "@components/Card";
-import ChartFilter from "@components/ChartFilter";
+import { useContext, useState } from "react";
 import { chartConfig } from "@constants/config";
+import ChartFilter from "@components/ChartFilter";
+import ThemeContext from "@contexts/ThemeContext";
 import { mockHistoricalData } from "@constants/mock";
 import { convertDateToUnixTimestamp } from "@helpers/date-helper";
 import {
@@ -16,6 +17,8 @@ import {
 const Chart = () => {
   const [data, setData] = useState(mockHistoricalData);
   const [filter, setFilter] = useState("1W");
+
+  const { darkMode } = useContext(ThemeContext);
 
   const formatData = () =>
     data.c
@@ -48,10 +51,14 @@ const Chart = () => {
             <linearGradient id="chartColor" x1="0" y1="0" x2="0" y2="1">
               <stop
                 offset="5%"
-                stopColor="rgb(199 210 254)"
+                stopColor={darkMode ? "#312e81" : "rgb(199 210 254)"}
                 stopOpacity={0.8}
               />
-              <stop offset="95%" stopColor="rgb(199 210 254)" stopOpacity={0} />
+              <stop
+                offset="95%"
+                stopColor={darkMode ? "#312e81" : "rgb(199 210 254)"}
+                stopOpacity={0}
+              />
             </linearGradient>
           </defs>
           <Area
@@ -62,7 +69,10 @@ const Chart = () => {
             fillOpacity={1}
             strokeWidth={0.5}
           />
-          <Tooltip />
+          <Tooltip
+            contentStyle={darkMode ? { background: "#111827" } : null}
+            itemStyle={darkMode ? { color: "#818cf8" } : null}
+          />
           <XAxis dataKey={"date"} />
           <YAxis domain={["dataMin", "dataMax"]} />
         </AreaChart>
