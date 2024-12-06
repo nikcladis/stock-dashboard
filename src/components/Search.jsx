@@ -1,9 +1,7 @@
 import { useState } from "react";
-
+import { mockSearchResults } from "@constants/mock";
 import SearchResults from "@components/SearchResults";
 import { XIcon, SearchIcon } from "@heroicons/react/solid";
-
-import { mockSearchResults } from "@constants/mock";
 
 const Search = () => {
   const [input, setInput] = useState("");
